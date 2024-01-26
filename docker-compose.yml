@@ -1,0 +1,28 @@
+version: "3.3"
+x-environment: &environment
+  environment:
+    PRIVATE_KEY: 'test'
+
+    # Enterprise License Key
+    # Required to access Enterprise-only features
+    # ENTERPRISE_LICENSE_KEY:
+
+    # Uncomment the below and set to 1 if you want to enable GitHub OAuth
+    # GITHUB_AUTH_ENABLED:
+    # GITHUB_ID:
+    # GITHUB_SECRET:
+
+services:
+  mockgee:
+    restart: always
+    image: mockgee/mockgee:latest
+    ports:
+      - 8080:8080
+      - 8085:8085
+    volumes:
+      - dbdata:/usr/app/database
+    <<: *environment
+
+volumes:
+ dbdata:
+   driver: local
