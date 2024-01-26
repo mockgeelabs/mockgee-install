@@ -136,7 +136,6 @@ EOT
     print "    ports:"
     print "      - \"80:80\""
     print "      - \"443:443\""
-    print "      - \"8080:8080\""
     print "    volumes:"
     print "      - ./traefik.yaml:/traefik.yaml"
     print "      - ./acme.json:/acme.json"
