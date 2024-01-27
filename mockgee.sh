@@ -61,18 +61,18 @@ install_mockgee() {
   mkdir -p mockgee && cd mockgee
   echo "📁 Created mockgee Quickstart directory at ./mockgee."
 
+  echo "📥 Downloading docker-compose.yml from mockgee GitHub repository..."
+  curl -o docker-compose.yml https://raw.githubusercontent.com/mockgeelabs/mockgee-install/main/docker-compose.yml
 
-
-
-docker compose up -d
-
-echo "🔗 To edit more variables and deeper config, go to the mockgee/docker-compose.yml, edit the file, and restart the container!"
-
-echo "🚨 Make sure you have set up the DNS records as well as inbound rules for the domain name and IP address of this instance."
-echo ""
-echo "🎉 All done! Check the status of mockgee & Traefik with 'cd mockgee && sudo docker compose ps.'"
-
-END
+  docker compose up -d
+  
+  echo "🔗 To edit more variables and deeper config, go to the mockgee/docker-compose.yml, edit the file, and restart the container!"
+  
+  echo "🚨 Make sure you have set up the DNS records as well as inbound rules for the domain name and IP address of this instance."
+  echo ""
+  echo "🎉 All done! Check the status of mockgee & Traefik with 'cd mockgee && sudo docker compose ps.'"
+  
+  END
 
 }
 
