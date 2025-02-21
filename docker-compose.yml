@@ -17,7 +17,7 @@ services:
     restart: always
     image: mockgee/mockgee:latest
     ports:
-      - 8080:8080
+      - 8000:8000
       - 8085:8085
     volumes:
       - dbdata:/usr/app/database
